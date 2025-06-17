@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }}</title>
+  {{- if .IsHome -}}
+  <meta name="description" content="{{ site.Params.Description }}" />
+  {{- else -}}
+  <meta name="description" content="{{ .Params.Description }}" />
+  {{- end }}
+  {{- if isset .Params "canonical" -}}
+  <link rel="canonical" href="{{ .Params.canonical }}" />
+  {{- else -}}
+  <link rel="canonical" href="{{ .Permalink }}" />
+  {{- end }}
+  <meta name="keywords" content="{{ if site.Params.Keywords }}{{ delimit site.Params.Keywords " , " }}{{ end }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  {{ hugo.Generator }}
+  {{ block "meta" . }}{{ end }}
+  {{ partialCached "css.html" . }}
+</head>
+
+<body class="antialiased">
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ block "footer" . }}{{ partialCached "footer.html" . }}{{ end }}
+  {{ partialCached "js.html" . }}
+</body>
+
+</html>

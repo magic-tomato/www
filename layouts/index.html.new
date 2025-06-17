@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="container mx-auto max-w-5xl bg-magicbg text-magictext">
+  <div class="flex justify-center items-center py-5 px-10">
+    {{ $logo := resources.Get "images/logo.png" }}
+    {{ partial "img.html" (dict "image" $logo "alt" "MagicTomato" "class" "h-12 w-auto") }}
+  </div>
+  <h1 class="text-3xl font-bold px-10 py-5 font-patuaone">Savourez, on fait votre marché</h1>
+  <h2 class="px-10 py-5">Des aliments frais, sains et de qualité, livrés le jour même dans un sac réfrigéré.
+  </h2>
+  <div class="flex justify-center items-center px-10 py-5">
+    {{ $bag := resources.Get "images/bag.png" }}
+    {{ partial "img.html" (dict "image" $bag "alt" "" "class" "w-full max-w-72 h-auto") }}
+  </div>
+  <div class="flex items-center px-5 py-5 justify-around gap-2">
+    <div>
+      <a href="https://apps.apple.com/app/magictomato/id6476135991">
+        {{ $apple := resources.Get "images/apple.png" }}
+        {{ partial "img.html" (dict "image" $apple "alt" "AppStore" "class" "w-48 h-auto") }}
+      </a>
+    </div>
+    <div>
+      <a href="https://play.google.com/store/apps/details?id=ch.magictomato.app&pli=1">
+        {{ $google := resources.Get "images/google.png" }}
+        {{ partial "img.html" (dict "image" $google "alt" "Google Play" "class" "w-48 h-auto") }}
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container mx-auto max-w-5xl bg-white text-magictext">
+  <div class="px-10 py-5">
+    <span class="px-2 py-0.5 font-patuaone bg-magicred rounded-lg text-white">1</span> Manger sainement
+  </div>
+</div>
+<div class="container mx-auto max-w-5xl bg-magicbg text-magictext">
+  <div class="font-patuaone text-magicred text-center text-2xl px-10 py-5">
+    Première livraison offerte
+  </div>
+</div>
+</div>
+{{ end }}

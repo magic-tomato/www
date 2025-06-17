@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+This project is the website of MagicTomato. It is generated with Hugo, the Golang static site generator (see https://gohugo.io/).
+
+CSS is declared using the library TailwindCSS, version 4.
